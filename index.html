@@ -52,14 +52,37 @@
         <!--
         <img src="ParallaxTest3.jpg" id="top">
         -->
-        <h2 id="text">TESTING</h2>
-
-
+        <h2 id="text">Welcome!</h2>
     </section>
 
 
+    
+    <div class="aboutsec">
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="Website1IMAGE.png">
+                    </div>
+                    <div class="about-col-2">
+                        <h1>About Me</h1>
+                        <h3>Hi, I'm Andrew Munoz Arvizu. I'm studying Computer Science at Cal Poly SLO and plan to graduate in 2026. I really like machine learning and AI. Right now, I'm reading a book called "Superintelligence" and watching some lectures from Stanford about GPT. I know Python, JAVA, CSS, JavaScript, and SQL, and I've taken some Coursera courses too. I haven't worked in this field yet, but I'm eager to learn more. When I'm not studying or coding, I like to play the piano, cook, and work out. Feel free to look around my website and contact me, especially if you have a job or internship in mind. One of my favorite quotes is "The time will pass anyway".</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
 
 
+
+
+    
+
+
+
+<!--
     <section class="aboutsec">
         <img src="andrewimage1.png" id="andrew">
         <div class="textcontainer">
@@ -75,7 +98,7 @@
         </div>
         
     </section>
-
+-->
 
     <!--
     <section class="projectssec">
@@ -90,31 +113,31 @@
             <div class="worklist">
 
                 <div class="work">
-                    <img src="Screenshot_20221222_084353.png">
+                    <img src="sudoku_portfolio.jpg">
                     <div class="layer">
                         <h3>Sudoku Solver</h3>
                         <p>The app connects you to  talented individuals</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/munozAndrew/SudokuSolver" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="Screenshot_20221222_084353.png">
+                    <img src="snakegame_portfolio.jpg">
                     <div class="layer">
                         <h3>Snake Game</h3>
                         <p>The app connects you to  talented individuals</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/munozAndrew/SnakeGame" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="Screenshot_20221222_084353.png">
+                    <img src="Parallaxstockimage.jpg">
                     <div class="layer">
                         <h3>Parallax Website</h3>
                         <p>The app connects you to  talented individuals</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="https://github.com/munozAndrew/ParallaxWebsite" target="_blank" ><i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">See More</a>
+            <a href="https://github.com/munozAndrew?tab=repositories" target="_blank" class="btn">See More</a>
 
         </div>
     </div>
@@ -133,22 +156,21 @@
                     <p><i class="fa-solid fa-paper-plane"></i> arvizumunozandrew@gmail.com</p>
                     <p><i class="fa-solid fa-phone"></i> 669 251 4652</p>
                     <div class="social_icons">
-                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                        <a href=""><i class="fa-brands fa-github"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/amunozar/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/munozAndrew" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/leadsm3" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>
-                    <a href="" download class="btn btn2">Download CV</a>
+                    <a href="CS2023REESUMESUMMERPDF - Copy.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact_right">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
-
-
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -158,6 +180,26 @@
 
 
     <script src="script.js"></script>
-</body>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxSjnfRmqFLxsqtwlCOBR1HiJIGXYorY_5330NwmzsEBllVxe9FrAY-XEmtq_wYJws4/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById('msg')
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+            msg.innerHTML = "Message Sent Successfully!"  
+            setTimeout(function(){
+                msg.innerHTML = ""
 
+            }, 5000)
+            form.reset()
+        })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+
+</body>
 </html>

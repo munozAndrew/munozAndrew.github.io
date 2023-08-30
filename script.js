@@ -20,8 +20,8 @@ let stars = document.getElementById('stars')
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
 
-    if (value >400) {
-        value = 400;
+    if (value >350) {
+        value = 357;
     }
 
 

@@ -80,6 +80,67 @@ header {
     pointer-events: none;
 }
 
+#text{
+    color: #d9dcd6;
+}
+
+
+
+
+
+
+
+.aboutsec {
+    display: flex;
+    position: relative;
+    background: #293b45;
+    padding: 30px;
+    
+}
+
+.container{
+    width: 1000px;
+
+}
+
+#about{
+    padding: 33px 0;
+    color: #00bf94;
+
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+
+
+}
+
+.about-col-2{
+    flex-basis: 60%;
+
+}
+.about-col-2 h3{
+    color: #d9dcd6;
+
+}
+
+
+
+
+
+
+
+/*
 
 .aboutsec {
     display: flex;
@@ -108,6 +169,10 @@ header {
 
 }
 
+*/
+
+
+
 
 
 #portfolio {
@@ -127,12 +192,14 @@ header {
     /* Change the color fo*/
     color: #00bf94;
     pointer-events: none;
+    padding: 30px 100px;
 }
 .worklist {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
+    padding: 0 30px;
 
 }
 
@@ -146,6 +213,15 @@ header {
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
+}
+
+.work:hover img{
+    transform: scale(1.1);
+
+}
+
+.work:hover .layer{
+    height: 100%;
 }
 
 .layer{
@@ -187,14 +263,7 @@ header {
     text-align: center;
 }
 
-.work:hover img{
-    transform: scale(1.1);
 
-}
-
-.work:hover .layer{
-    height: 100%;
-}
 .btn{
     display: block;
     margin: 50px auto;
@@ -233,6 +302,12 @@ header {
 
 }
 
+.contact_left h1{
+    color:#00bf94;
+    padding: 30px;
+
+}
+
 .contact_left{
     flex-basis: 35%;
     padding: 0 60px;
@@ -243,6 +318,10 @@ header {
 
 .contact_left p{
     flex-basis: 35px;
+}
+
+.contact_left p {
+    color:#d9dcd6;
 }
 
 .contact_left p i{
@@ -274,6 +353,7 @@ header {
 .btn.btn2{
     display: inline-block;
     background-color: #00bf94;
+    margin-top: 20px;
 }
 
 .contact_right form{
@@ -293,4 +373,11 @@ form input, form textarea{
     border-radius: 6px;
 
 
+}
+
+
+#msg {
+    color:#134c04;
+    margin-top: -40px;
+    display: block;
 }
