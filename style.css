@@ -36,8 +36,14 @@ header {
     pointer-events: none;
     margin-right: 577px;
 }
-
-
+/*
+.navigation {
+    margin-left: auto;
+} POSSIBLE FIXXX
+*/
+.navigation{
+    margin-left: 330px;
+}
 .navigation a{
     text-decoration: none;
     color: #00bf94;
@@ -60,6 +66,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /*max-height: 950px;*/
 
 }
 
@@ -67,22 +74,20 @@ header {
 #text {
     position: absolute;
     font-size: 5em;
-    color: #fff;
+    color: #d9dcd6;
     text-shadow: 2px 2px 4px rgba(0,0,0,.2);
 }
 
 
 .parallax img{
-    position: absolute;
+    position:absolute;
     top: 0;
     left: 0;
     width: 100%;
     pointer-events: none;
+    
 }
 
-#text{
-    color: #d9dcd6;
-}
 
 
 
@@ -94,7 +99,7 @@ header {
     display: flex;
     position: relative;
     background: #293b45;
-    padding: 30px;
+    padding: 43px;
     
 }
 
@@ -380,4 +385,179 @@ form input, form textarea{
     color:#134c04;
     margin-top: -40px;
     display: block;
+}
+
+
+.menu-icon {
+    display: none !important;
+}
+
+
+
+@media only screen and (max-width: 600px){
+
+    
+
+    .menu-icon {
+        display: inline-block !important;
+    }
+    #text{
+        font-size: 20px;
+        top: 25%;
+
+    }
+
+    header { 
+        padding: 20px 50px;
+
+    }
+    .logo {
+        font-size: 1em;
+        margin-right: 70px;
+    }
+
+
+    .navigation {
+        position: fixed; /* Fixed Position */
+        top: 0; /* Align to the top */
+        right: 0; /* Align to the right, you can change this to -200px to hide it */
+        width: 200px; /* Width of the sidebar */
+        height: 100vh; /* Full height */
+        background-color: #00bf94; /* Background Color */
+        flex-direction: column; /* Vertical Alignment */
+        align-items: center; /* Center items */
+        justify-content: space-evenly; /* Evenly space the items */
+        transition: right 0.3s ease-in-out; /* Smooth slide animation */
+    }
+
+    .navigation a {
+        display: block; /* Stack the links */
+        text-align: center; /* Center align text */
+        margin: 30px 0; /* Margin on top and bottom */
+
+        width: 100%; /* Full width */
+    }
+
+    .navigation .fa-xmark{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    .fa-bars{
+        position: absolute;
+        right: -90px;  
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+
+
+    
+
+
+    
+    
+
+
+
+    .row{
+        flex-direction: column;
+        align-items:baseline;
+    }
+    .about-col-1 img {
+        max-width: 27%;
+        width: auto;
+        
+    }
+    .about-col-2 {
+        flex-basis: 60%;
+        max-width: 25%; 
+        font-size: 40%;
+    }
+
+
+    .contact_left, .contact_right{
+        flex-basis: 100%;
+    }
+
+    .work{
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        width: 200px; /* Add this to reduce the width */
+        height: auto; 
+    }
+
+    .btn{
+        display: block;
+        margin: 50px 0;
+        margin-left: 65px;
+        width: fit-content;
+        border: 1px solid #00bf94;
+        padding: 7px 25px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #d9dcd6;
+        transition: background 0.5s;
+    }
+
+    .portfolio h1{
+        padding: 20px 30px;
+        font-size: 80%;
+
+    }
+
+    .worklist{
+        margin-top: 0;
+    }
+    
+    /*
+    
+
+    .worklist{
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+
+    .work img {
+        height: 80px;
+        width: 60px;
+        object-fit: cover;
+      }
+    .work {
+        width: 100%;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+
+    }
+    */
+    
+
+
+
+
+
+
+
+
+
+    /*
+
+    .about-col-1 img{
+        transform: scale(.5);
+        
+
+    }
+    */
+    
+
+    
+    
+
 }

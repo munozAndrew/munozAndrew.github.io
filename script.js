@@ -1,5 +1,4 @@
 let text = document.getElementById('text');
-let tops = document.getElementById('top')
 let rocket = document.getElementById('rocket')
 let whiteBR = document.getElementById('whiteBR')
 let whiteBL = document.getElementById('whiteBL')
@@ -64,8 +63,60 @@ window.addEventListener('scroll', () => {
     blackTR.style.top = value * .8 + 'px';
     blackTR.style.left = value *1 + 'px';
 
-    tops.style.top = value * 1.5 + 'px';
     
 
 
 });
+
+document.addEventListener("DOMContentLoaded", function() { // Wait until the DOM is fully loaded
+    const nav = document.querySelector('.navigation'); // Select the .navigation element
+    const closeIcon = document.querySelector('.navigation .fa-xmark'); // Select the .fa-xmark icon inside .navigation
+    const openIcon = document.querySelector('.fa-bars'); // Select the .fa-bars icon (hamburger menu)
+
+
+
+    closeIcon.addEventListener('click', function() { // Add click event listener
+        nav.style.right = '-200px'; // Move the sidebar to the right to hide it
+        openIcon.style.setProperty('display', 'block', 'important');
+    });
+
+    // Optional: Add this part if you also have a button to open the sidebar
+    openIcon.addEventListener('click', function() {
+        nav.style.right = '0'; // Move the sidebar back to its original position to show it
+        openIcon.style.setProperty('display', 'none', 'important');
+        // could also use         openIcon.style.opacity = '0';
+
+    });
+
+    function handleResize() {
+        // Adjust styles based on window width or other criteria.
+        if (window.innerWidth >= 768) { // for example, if screen is wider than 768px
+            nav.style.right = '0';
+            openIcon.style.setProperty('display', 'none', 'important');
+        } else {
+            // Reset to original states (modify as needed)
+            nav.style.right = '-200px';
+            openIcon.style.setProperty('display', 'block', 'important');
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    // Initial check
+    handleResize();
+
+    closeIcon.addEventListener('click', function() {
+        nav.style.right = '-200px';
+        openIcon.style.setProperty('display', 'block', 'important');
+    });
+
+    openIcon.addEventListener('click', function() {
+        nav.style.right = '0';
+        openIcon.style.setProperty('display', 'none', 'important');
+    });
+
+
+
+    
+});
+
